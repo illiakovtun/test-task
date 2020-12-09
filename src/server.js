@@ -1,20 +1,17 @@
-const express = require('express');
-
-const cors = require('cors')
-
-const app = express();
-const bodyParser = require('body-parser')
-app.use(bodyParser.json())
-const jsonParser = bodyParser.json({extended: true})
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
-app.use(cors())
-
-app.post("/calculate", (req, res, next) => {
-    const { firstNumber, secondNumber } = req.body;
-    const sum = firstNumber + secondNumber;
-    res.json({sum})
-})
-
-app.listen(8000, () => {
-    console.log('server running at port 8000')
-})
+"use strict";
+exports.__esModule = true;
+var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var app = express();
+app.use(bodyParser.json());
+app.use(cors());
+app.post("/calculate", function (req, res) {
+    var firstNumber = req.body.firstNumber;
+    var secondNumber = req.body.secondNumber;
+    var sum = firstNumber + secondNumber;
+    res.json({ sum: sum });
+});
+app.listen(8000, function () {
+    console.log('server running at port 8000');
+});
