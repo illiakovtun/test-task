@@ -22,8 +22,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "transpile": "tsc ./src/server.ts",
-    "server": "node ./src/server.js",
+    "server": "tsc ./src/server/server.ts && node ./src/server/server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
